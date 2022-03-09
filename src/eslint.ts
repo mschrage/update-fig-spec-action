@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-/* eslint-disable import/no-commonjs */
-import { ESLint, Linter } from 'eslint'
 // import modules required by eslint configuration so that they get bundled by ncc
-require('@typescript-eslint/parser')
-require('@typescript-eslint/eslint-plugin')
-require('@withfig/eslint-plugin-fig-linter')
-require('eslint-plugin-compat')
+import '@typescript-eslint/parser'
+import '@typescript-eslint/eslint-plugin'
+import '@withfig/eslint-plugin-fig-linter'
+import 'eslint-plugin-compat'
+import { ESLint, Linter } from 'eslint'
 
 const config: Linter.Config = {
   parser: '@typescript-eslint/parser',
