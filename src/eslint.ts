@@ -4,6 +4,7 @@ import '@typescript-eslint/eslint-plugin'
 import '@withfig/eslint-plugin-fig-linter'
 import 'eslint-plugin-compat'
 import { ESLint, Linter } from 'eslint'
+import path from 'path'
 
 const config: Linter.Config = {
   parser: '@typescript-eslint/parser',
@@ -36,6 +37,7 @@ export async function lintString(
   specPath: string
 ): Promise<string> {
   const eslint = new ESLint({
+    resolvePluginsRelativeTo: path.join(process.cwd(), 'dist'),
     baseConfig: config,
     fix: true,
     useEslintrc: false
