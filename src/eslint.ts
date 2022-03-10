@@ -3,7 +3,6 @@ import '@typescript-eslint/parser'
 import '@typescript-eslint/eslint-plugin'
 import '@withfig/eslint-plugin-fig-linter'
 import 'eslint-plugin-compat'
-import 'espree'
 import { ESLint, Linter } from 'eslint'
 
 const config: Linter.Config = {
