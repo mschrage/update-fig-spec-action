@@ -78,7 +78,11 @@ async function run() {
       )
     core.setOutput('pr-number', createdPRNumber)
   } catch (error) {
-    core.error((error as Error).message)
+    core.error(
+      `${(error as Error).name}: ${(error as Error).message}\n\n${
+        (error as Error).stack
+      }`
+    )
   }
 }
 
