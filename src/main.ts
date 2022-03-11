@@ -35,7 +35,7 @@ async function run() {
     )
 
     // get generated spec, run eslint and prettier on top of it and report eventual errors
-    let newSpecContent = await getFormattedSpecContent(octokit, specPath)
+    const newSpecContent = await getFormattedSpecContent(octokit, specPath)
 
     // check if spec already exist in autocomplete repo, if it does => run merge tool and merge it
     const autocompleteSpec = await autocompleteRepoManager.getSpec(
@@ -43,9 +43,9 @@ async function run() {
       specPath
     )
     if (autocompleteSpec) {
-      newSpecContent = mergeSpecs(autocompleteSpec, newSpecContent, {
-        ...(integration && { preset: integration })
-      })
+      // newSpecContent = mergeSpecs(autocompleteSpec, newSpecContent, {
+      //   ...(integration && { preset: integration })
+      // })
     }
     core.info(`Successfully generated new spec`)
 
