@@ -1,5 +1,5 @@
-import * as prettier from 'prettier'
+// import * as prettier from 'prettier'
 
-export function format(code: string): string {
-  return prettier.format(code, { parser: 'typescript' })
-}
+// export function format(code: string): string {
+//   return prettier.format(code, { parser: 'typescript' })
+// }

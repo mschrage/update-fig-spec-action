@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 import { File, Octokit } from './types'
-import { format } from './prettier'
+// import { format } from './prettier'
 // import { lintString } from './eslint'
 
 export async function getRepoDefaultBranch(
@@ -29,10 +29,11 @@ export async function getFormattedSpecContent(
 
     core.info('Started linting and formatting the new spec...')
     // const lintedString = await lintString(decodedFile, specPath)
-    const formatted = format(decodedFile)
+    // const formatted = format(decodedFile)
     core.info('Finished linting and formatting the new spec')
+    return decodedFile
 
-    return formatted
+    // return formatted
   }
   throw new Error(`spec-path: ${specPath} does not correspond to a valid file`)
 }
